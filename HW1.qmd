@@ -1,0 +1,56 @@
+---
+title: "Adv programming with R- Homework 1"
+author: "Shubham Salvi 24228236"
+format: pdf
+editor: visual
+---
+
+# Introduction
+
+The **`mtcars`** dataset is a classic dataset that contains data about fuel consumption and 10 aspects of automobile design and performance for 32 cars (1973–74 models).
+
+In this document, we create a plot of miles per gallon (mpg) versus horsepower (hp), with cars grouped by the number of cylinders.
+
+# Descriptive Statistics
+
+-   Number of observations: `r nrow(mtcars)`
+-   Variables: mpg (Miles per gallon), hp (Horsepower), cyl (Number of cylinders)
+
+# The Plot
+
+```{r warning=FALSE, echo=FALSE}
+summary(mtcars[, c("mpg", "hp", "cyl")])
+library(ggplot2)
+
+# commit 1 
+
+
+# Create a scatter plot using ggplot
+ggplot(mtcars, aes(x = hp, y = mpg, color = factor(cyl))) +
+  # Add points to the plot, sized for better visibility
+  geom_point(size = 3) + 
+   # Add informative labels and a title
+  labs(
+    title = "Fuel Efficiency vs Horsepower", # Plot the title
+    x = "Horsepower", # Plot horsepower on x axis
+    y = "Miles per Gallon", # Plot mpg on Y axis
+    color = "Cylinders" # This is the legend title
+  ) +
+  theme_minimal() # Applying a clean minimal theme for the overall plot
+```
+
+## Interpretation for the plot:
+
+-   The plot shows a **negative relationship** between horsepower and fuel efficiency: as horsepower increases, the miles per gallon generally decreases. Cars with **more cylinders** (e.g., 8) tend to cluster at the higher horsepower and lower mpg range, while **4-cylinder** cars tend to have better fuel efficiency and lower horsepower.
+
+-   This matches with expectations—larger, more powerful engines typically consume more fuel.
+
+## Interpretation of the Statistics :
+
+From the summary statistics:
+
+-   **Miles per gallon (`mpg`)** ranges from **10.40** to **33.90**, with a **median of 19.20** and a **mean of 20.09**. The lower quartile (25%) is **15.43** and the upper quartile (75%) is **22.80**, indicating most cars fall within this efficiency range.
+-   **Horsepower (`hp`)** ranges from **52** to **335**, with a **median of 123** and a **mean of 146.7**. The spread is wide, and the upper quartile is **180**, indicating some cars with significantly high horsepower.
+-   **Number of cylinders (`cyl`)** has only three values: **4**, **6**, and **8**, with a **median of 6** and a **mean of 6.19**. The quartiles confirm a fairly balanced distribution, but slightly skewed toward higher cylinder counts.
+
+These statistics provide context for the scatter plot. Higher horsepower typically correlates with more cylinders, which in turn is associated with lower fuel efficiency.
