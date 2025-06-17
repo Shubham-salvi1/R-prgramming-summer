@@ -42,9 +42,9 @@ ggplot(mtcars, aes(x = hp, y = mpg, color = factor(cyl))) +
 
 ## Interpretation for the plot:
 
--   The plot shows a **negative relationship** between horsepower and fuel efficiency: as horsepower increases, the miles per gallon generally decreases. Cars with **more cylinders** (e.g., 8) tend to cluster at the higher horsepower and lower mpg range, while **4-cylinder** cars tend to have better fuel efficiency and lower horsepower.
+1.  The plot shows a **negative relationship** between horsepower and fuel efficiency: as horsepower increases, the miles per gallon generally decreases. Cars with **more cylinders** (e.g., 8) tend to cluster at the higher horsepower and lower mpg range, while **4-cylinder** cars tend to have better fuel efficiency and lower horsepower.
 
--   This matches with expectations—larger, more powerful engines typically consume more fuel.
+2.  This matches with expectations—larger, more powerful engines typically consume more fuel.
 
 ## Interpretation of the Statistics :
 
