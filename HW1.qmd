@@ -25,6 +25,7 @@ library(ggplot2)
 # commit 1 
 
 
+print("Commit 1")
 # Create a scatter plot using ggplot
 ggplot(mtcars, aes(x = hp, y = mpg, color = factor(cyl))) +
   # Add points to the plot, sized for better visibility
